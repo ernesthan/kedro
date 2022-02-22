@@ -118,7 +118,7 @@ Add the following to `src/kedro_tutorial/pipelines/data_processing/pipeline.py`,
 
 ```python
 def create_pipeline(**kwargs) -> Pipeline:
-    return pipeline(
+    return Pipeline(
         [
             node(
                 func=preprocess_companies,
@@ -145,7 +145,7 @@ def create_pipeline(**kwargs) -> Pipeline:
 Be sure to import `node`, and your functions by adding them to the beginning of `pipeline.py`:
 
 ```python
-from kedro.pipeline import Pipeline, node, pipeline
+from kedro.pipeline import Pipeline, node
 
 from .nodes import preprocess_companies, preprocess_shuttles
 ```
